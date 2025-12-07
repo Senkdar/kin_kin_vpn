@@ -1,11 +1,11 @@
 from __future__ import annotations
 
+from decimal import Decimal
 from typing import Optional
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from decimal import Decimal
 
-from db.repos.payments import create_deposit, confirm_deposit, get_balance
+from db.repos.payments import confirm_deposit, create_deposit, get_balance
 
 
 async def make_deposit(session: Optional[AsyncSession] = None, *, user_id: Optional[int] = None) -> str:

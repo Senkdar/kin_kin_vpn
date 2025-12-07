@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from typing import Any, Awaitable, Callable, Dict
+
 from aiogram import BaseMiddleware
-from typing import Any, Callable, Awaitable, Dict
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 

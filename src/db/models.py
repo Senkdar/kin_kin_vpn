@@ -1,13 +1,19 @@
 from __future__ import annotations
-from sqlalchemy.ext.asyncio.session import AsyncSession
 
-
-
-from typing import Optional
-from decimal import Decimal
 import uuid
+from decimal import Decimal
+from typing import Optional
 
-from sqlalchemy import DateTime, Text, BigInteger, func, String, CheckConstraint, ForeignKey, Numeric
+from sqlalchemy import (
+    BigInteger,
+    CheckConstraint,
+    DateTime,
+    ForeignKey,
+    Numeric,
+    String,
+    Text,
+    func,
+)
 from sqlalchemy.ext.asyncio import (
     AsyncEngine,
     AsyncSession,
@@ -18,10 +24,8 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
 def _to_asyncpg_url(database_url: str) -> str:
-    """
-    Преобразует postgresql://... в postgresql+asyncpg://...
-    Оставляет URL без изменений, если схема уже async.
-    """
+    """Преобразует postgresql://... в postgresql+asyncpg://..."""
+
     if database_url.startswith("postgresql+asyncpg://"):
         return database_url
     # также поддержим короткую форму postgres://

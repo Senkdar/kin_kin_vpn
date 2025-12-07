@@ -1,5 +1,7 @@
 from typing import Optional
+
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from db.repos.users import upsert_user
 
 

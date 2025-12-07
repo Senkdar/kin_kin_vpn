@@ -5,10 +5,13 @@ from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, async_sessionmaker
 
+from bot.routers.devices import devices_router
+from bot.routers.menu import menu_router
+from bot.routers.payments import payments_router
+from bot.routers.referrals import referrals_router
+from bot.routers.start import start_router
 from db.models import init_db
 from middlewares.db_session import DbSessionMiddleware
-from bot.routers.menu import menu_router
-from bot.routers.start import start_router
 
 load_dotenv()
 
@@ -34,6 +37,9 @@ async def main():
     # Роутеры
     dp.include_router(start_router)
     dp.include_router(menu_router)
+    dp.include_router(payments_router)
+    dp.include_router(devices_router)
+    dp.include_router(referrals_router)
 
     try:
         await dp.start_polling(bot)

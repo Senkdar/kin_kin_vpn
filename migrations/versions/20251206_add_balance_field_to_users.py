@@ -4,9 +4,8 @@ Revision ID: 20251206_add_users_balance
 Revises: 20251206_add_balance_tx
 Create Date: 2025-12-06
 """
-from alembic import op
 import sqlalchemy as sa
-
+from alembic import op
 
 # revision identifiers, used by Alembic.
 revision = "20251206_add_users_balance"
