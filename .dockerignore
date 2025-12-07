@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.git/
+.gitignore
+.env
+.venv/
+dist/
+build/
+.cache/
+*.log
+*~
+
