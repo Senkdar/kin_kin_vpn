@@ -10,7 +10,7 @@ from bot.routers.menu import menu_router
 from bot.routers.payments import payments_router
 from bot.routers.referrals import referrals_router
 from bot.routers.start import start_router
-from db.models import init_db
+from db.connection import init_db
 from middlewares.db_session import DbSessionMiddleware
 
 load_dotenv()
